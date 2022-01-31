@@ -1,12 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-  <a href="#" class="brand-link">
+  <a href="index3.html" class="brand-link">
     <img 
       src="dist/img/AdminLTELogo.png" 
       alt="AdminLTE Logo" 
       class="brand-image img-circle elevation-3" 
       style="opacity: .8">
 
-    <span class="brand-text font-weight-light">SIGASING</span>
+    <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
   
   <div class="sidebar">
@@ -26,11 +26,7 @@
     </div>
 
     <nav class="mt-2">
-      <ul 
-      class="nav nav-pills nav-sidebar flex-column" 
-      datawidget="treeview" 
-      role="menu" 
-      data-accordion="false">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
         <li class="nav-item">
           <a href="?page=home" class="nav-link active">
@@ -53,14 +49,12 @@
           <ul class="nav nav-treeview">
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="?page=lokasiread" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lokasi</p>
               </a>
             </li>
-            9
-            Mirza Yogy Kurniawan - Praktikum Web (PHP)
-      
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
