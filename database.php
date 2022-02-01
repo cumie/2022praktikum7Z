@@ -5,6 +5,7 @@ class Database
   private $db_name;
   private $username;
   private $password;
+  public $conn;
 
   function __construct() 
   {
@@ -20,9 +21,9 @@ class Database
     try 
     {
       $this->conn = new PDO("mysql:host = ". $this->host.
-                              ";dbname = ". $this->db_name,
-                              $this->username,
-                              $this->password);
+      ";dbname = ". $this->db_name,
+                    $this->username,
+                    $this->password);
       $this->conn->setAttribute(PDO::ATTR_ERRMODE,
                                 PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $exception) {
