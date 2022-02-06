@@ -1,3 +1,39 @@
+<?php
+if (isset($_POST['button_create'])) {
+  //print_r($_POST);
+
+  $database = new Database();
+  $db = $database->getConnection();
+
+  $validateSQL = "SELECT * FROM praktikum_presensi_penggajian.lokasi WHERE nama_lokasi = ?";
+  $stmt = $db->prepare($validateSQL);
+  $stmt->bindParam(1, $_POST['nama_lokasi']);
+  $stmt->execute();
+
+  if ($stmt->rowCount() > 0) {
+  ?>
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+    <h5><i class="icon fas fa-ban"></i>GAGAL</h5>
+    Nama lokasi sudah ada
+  </div>
+    <?php
+  } else {
+    $insertSQL = "INSERT INTO praktikum_presensi_penggajian.lokasi SET nama_lokasi = ?";
+    $stmt = $db->prepare($insertSQL);
+    $stmt->bindParam(1, $_POST['nama_lokasi']);
+    if ($stmt->execute()) {
+      $_SESSION['hasil'] = true;
+      $_SESSION['pesan'] = "Simpan data SUKSES!";
+    } else {
+      $_SESSION['hasil'] = false;
+      $_SESSION['pesan'] = "Simpan data GAGAL!";
+    }
+    echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>"
+  }
+}
+?>
+
 <section class='content-header'>
   <div class='container-fluid'>
     <div class="row nb2">
