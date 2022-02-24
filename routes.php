@@ -64,6 +64,10 @@ if (isset($_GET['page'])) {
     case 'karyawanbagian' :
       file_exists('pages/admin/karyawan/karyawanbagian.php') ? include 'pages/admin/karyawan/karyawanbagian.php' : include 'pages/404.php';
       break;
+//__________LAPORAN__________
+    case 'penggajianrekap' :
+      file_exists('pages/admin/rekap/penggajianrekap.php') ? include 'pages/admin/rekap/penggajianrekap.php' : include 'pages/404.php';
+      break;
       
       default:
         include 'pages/404.php';
